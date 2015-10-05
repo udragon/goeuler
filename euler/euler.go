@@ -5,11 +5,30 @@ package euler
 import "math"
 // import "math/big"
 
+func IntegerSqrt(n uint64) uint64 {
+    // Returns the square root of n using Newton's method.
+    // Complexity O(log(n))
+
+    var x uint64 = 1
+    y := (x + n/x) / 2
+
+    for (y - x) > 1 {
+        x = y
+        y = (x + n/x) / 2
+    }
+
+    for y*y > n {
+        y -= 1
+    }
+
+    return y
+}
+
 func isPrimeNaive(n uint64) bool {
     // Returns whether n is a prime number or not, using naive brute-force.
     // Complexity: O(sqrt(n))
 
-    var lim uint64 = uint64(math.Sqrt(float64(n)))
+    var lim uint64 = IntegerSqrt(n)
     var i uint64
 
     for i = 2; i <= lim; i++ {

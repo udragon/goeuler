@@ -97,4 +97,16 @@ func TestFibonacciModFast(t *testing.T) {
 
 }
 
+func TestIntegerSqrt(t *testing.T) {
 
+    tuples := [5][2]uint64 {
+        {2,1}, {10, 3}, {100, 10}, {9, 3}, {1,1} }
+
+    for _,tuple := range tuples {
+        sqrt := IntegerSqrt(tuple[0])
+        if sqrt != tuple[1] {
+            t.Errorf("the square root of %d is %d, not %d",
+                tuple[0], tuple[1], sqrt)
+        }
+    }
+}
