@@ -1,4 +1,4 @@
-// Package for Project Euler shortcuts and stuff
+// A Go package for Project Euler math functions and utilities.
 
 package euler
 

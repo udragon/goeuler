@@ -1,2 +1,2 @@
 # goeuler
-A go package for project euler math utils
+A Go package for Project Euler math functions and utilities.
